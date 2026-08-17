@@ -1,7 +1,10 @@
+body {
+    background: black;
+}
 .container {
     margin: auto;
-    width: 800px;
-    height: 600px;
+    width: 1000px;
+    height: 1000px;
     background-color: rgb(70, 93, 90);
     border-radius: 20px;
     padding: 10px;
@@ -11,14 +14,15 @@
     flex-wrap: wrap;
 }
 .cell {
-    border: 1px solid rgb(96, 0, 128);
-    flex-grow: 1;
-    flex-basis: 0;
+    outline: 1px solid rgb(96, 0, 128);
+    flex: 0 0 120px;
+    flex-basis: 240px;
+    aspect-ratio: 1 / 1;
 }
 
 .content {
     width: inherit;
-    display: flex;
+    display:flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -26,6 +30,6 @@
 #canvas-container {
     display: flex;
     flex-wrap: wrap;
-    width: 600px;
-    height: 600px;
+    width: 960px;
+    height: auto;
 }

@@ -2,15 +2,25 @@
 function getBoxCount(e) {
     if(e.key === 'Enter'){
         let boxCount = parseInt(input.value)
-        console.log(boxCount)
-        populateBoxes(boxCount)
+        if (boxCount > 100 || boxCount < 1){
+            alert("Pick a value between 1 and 100")
+        }
+        else{
+            const gridSize = boxCount * boxCount
+            populateBoxes(gridSize, cellSize(boxCount))
+        }
     }
 }
 
-function createBox(){
+function cellSize(boxTotal){
+    return 960 / boxTotal
+}
+
+function createBox(size){
     const newBox = document.createElement("div")
     canvasContainer.appendChild(newBox)
     newBox.classList.add("cell")
+    newBox.style.flexBasis =`${size}px`
 }
 
 function deleteBoxes(){
@@ -20,14 +30,14 @@ function deleteBoxes(){
     }
 }
 
-function populateBoxes(count){
+function populateBoxes(count, boxSize){
     //check if boxes already exist
     if(canvasContainer.childElementCount > 0){
         deleteBoxes()
     }
     //otherwise, populate new boxes 
     for(i = 0; i < count; i++){ 
-        createBox()
+        createBox(boxSize)
     }
 }
 
