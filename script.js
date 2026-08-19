@@ -13,7 +13,7 @@ function getBoxCount(e) {
 }
 
 function cellSize(boxTotal){
-    return 960 / boxTotal
+    return (960 / boxTotal) - 0.01
 }
 
 function createBox(size){

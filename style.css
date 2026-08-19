@@ -3,21 +3,29 @@ body {
 }
 .container {
     margin: auto;
-    width: 1000px;
-    height: 1000px;
+    width: fit-content;
+    height: fit-content;
     background-color: rgb(70, 93, 90);
     border-radius: 20px;
-    padding: 10px;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
+    padding: 20px;
 }
 .cell {
-    outline: 1px solid rgb(96, 0, 128);
+    outline: 1px solid rgb(123, 122, 123);
+    background-color: azure;
     flex: 0 0 120px;
     flex-basis: 240px;
     aspect-ratio: 1 / 1;
+}
+
+.input {
+    margin: 20px 0px;
+    height: 40px;
+    width: 100px;
+}
+
+.cell:hover {
+    transition: 50ms;
+    background-color: rgb(228, 228, 228);
 }
 
 .content {
