@@ -1,4 +1,5 @@
-//Functions
+////////////////////Functions////////////////////////
+function main(){
 function getBoxCount(e) {
     if(e.key === 'Enter'){
         let boxCount = parseInt(input.value)
@@ -11,22 +12,26 @@ function getBoxCount(e) {
         }
     }
 }
-
 function cellSize(boxTotal){
     return (960 / boxTotal) - 0.01
 }
-
 function createBox(size){
     const newBox = document.createElement("div")
     canvasContainer.appendChild(newBox)
     newBox.classList.add("cell")
     newBox.style.flexBasis =`${size}px`
 }
-
 function deleteBoxes(){
     for(i = canvasContainer.childElementCount; i > 0; i--){
         const cell = document.querySelector(".cell")
         canvasContainer.removeChild(cell)
+    }
+}
+
+function removeAllFill(){
+    for(i = canvasContainer.childElementCount; i > 0; i--){
+        const cell = document.querySelector(".cell")
+        cell.style.backgroundColor = ""
     }
 }
 
@@ -41,11 +46,42 @@ function populateBoxes(count, boxSize){
     }
 }
 
-//Variables
+////////////////////Variables////////////////////////
 const canvasContainer = document.getElementById("canvas-container")
 const input = document.querySelector("input")
 const cell = document.querySelector(".cell")
+const colorSelect = document.querySelector("#color-choice")
+const erase = document.getElementById("erase")
 
-//Listener
+////////////////////Events////////////////////////
 input.addEventListener("keypress", getBoxCount);
+colorSelect.addEventListener("change", function(){
+    const colorChoice = colorSelect.value
+})
+canvasContainer.addEventListener("mouseover", (event) => {
+    if(event.buttons === 1){
+        event.preventDefault()
+        event.target.style.backgroundColor = ""
+    }
+    else{
+        event.target.style.backgroundColor = colorSelect.value
+    }
+});
+canvasContainer.addEventListener("click", (event) => {
+        event.preventDefault()
+        event.target.style.backgroundColor = ""
+});
+canvasContainer.addEventListener("dragstart", (event) => {
+        event.preventDefault()
+});
 
+erase.addEventListener("click", function(){
+    const cell = document.querySelectorAll(".cell")
+    cell.forEach((item) => item.style.backgroundColor = "")
+})
+
+
+}
+
+////////Run///////////
+main()

@@ -41,3 +41,7 @@ body {
     width: 960px;
     height: auto;
 }
+
+.clearBg {
+    background-color: #fff !important;
+}
