@@ -1,4 +1,4 @@
-# Etch-A-Sketh
+# Etch-A-Sketch
 
  Simple Etch-A-Sketch program that allows the user to populate a grid of a chosen size with any colour of the user's choice. 
 
