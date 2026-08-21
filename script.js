@@ -1,5 +1,6 @@
 ////////////////////Functions////////////////////////
 function main(){
+
 function getBoxCount(e) {
     if(e.key === 'Enter'){
         let boxCount = parseInt(input.value)
@@ -13,7 +14,7 @@ function getBoxCount(e) {
     }
 }
 function cellSize(boxTotal){
-    return (960 / boxTotal) - 0.01
+    return (800 / boxTotal) - 0.01
 }
 function createBox(size){
     const newBox = document.createElement("div")

@@ -7,15 +7,23 @@
     <title>Etch A Sketch - odinProject - Robert Valentine</title>
 </head>
 <body>
+    <div class="title">
+        <h1>Etch-A-Sketch</h1>
+        <p>Move your cursor to paint. Click & Drag to erase.</p>
+    </div>
     <div class="container">
         <div class="options">
-            <label for="input-field">ENTER NUMBER OF CELLS PER SIDE</label>
-            <input type="number" placeholder="Enter number of squaresper side" id="input-field" class="input" min="1" max="100" title="Enter number of square cells per side"">
-            <div class="divider"></div>
-            <label for="color-choice">BRUSH COLOR</label>
-            <input type="color" value="#000000" id="color-choice">
-            <div class="divider"></div>
-            <button id="erase">ERASE ALL PAINT</button>
+            <div class="squaresPerSide">
+                <label for="input-field">Squares Per Side</label>
+                <input type="number" placeholder="0" id="input-field" class="input" min="1" max="100" title="Enter number of square cells per side">
+            </div>
+            <div class="color">
+                <label for="color-choice">Color</label>
+                <input type="color" value="#000000" id="color-choice">
+            </div>
+            <div class="erase">
+                <button id="erase">Erase All</button>
+            </div>
         </div>
         
         <div class="content">
